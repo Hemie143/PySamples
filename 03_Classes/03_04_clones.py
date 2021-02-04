@@ -47,4 +47,10 @@ jay_car = copy.copy(mclaren)
 print(mclaren)              # Car (McLaren F1, Engine BMW S70/2)
 print(jay_car)              # Car (McLaren F1, Engine BMW S70/2)
 print(mclaren is jay_car)   # False
-
+jay_car.motor.model = 'S70/2 custom'
+print(mclaren)              # Car (McLaren F1, Engine BMW S70/2 custom)
+print(jay_car)              # Car (McLaren F1, Engine BMW S70/2 custom)
+max_car = copy.deepcopy(jay_car)
+max_car.motor.model = 'S70/2 enhanced'
+print(mclaren)              # Car (McLaren F1, Engine BMW S70/2 custom)
+print(max_car)              # Car (McLaren F1, Engine BMW S70/2 enhanced)
