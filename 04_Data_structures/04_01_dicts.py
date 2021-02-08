@@ -16,4 +16,17 @@ print(d.keys())             # odict_keys(['one', 'two', 'three'])
 
 # defaultdict
 e = collections.defaultdict(list)
-print(e)
+print(e)                    # defaultdict(<class 'list'>, {})
+e['cats'].append('Felix')
+e['cats'].append('Milo')
+print(e)                    # defaultdict(<class 'list'>, {'cats': ['Felix', 'Milo']})
+print(e['dogs'])            # []
+
+# ChainMap
+dict1 = {1: 'one', 2: 'two'}
+dict2 = {3: 'three', 4: 'four', 'hello': 'world'}
+f = collections.ChainMap(dict1, dict2)
+print(f)                    # ChainMap({1: 'one', 2: 'two'}, {3: 'three', 4: 'four'})
+print(f['hello'])           # world
+
+
