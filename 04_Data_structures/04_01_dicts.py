@@ -29,4 +29,11 @@ f = collections.ChainMap(dict1, dict2)
 print(f)                    # ChainMap({1: 'one', 2: 'two'}, {3: 'three', 4: 'four'})
 print(f['hello'])           # world
 
-
+# MappingProxyType
+from types import MappingProxyType
+my_dict = {'alice': 19, 'bob': 18, 'charlie': 20}
+read_only = MappingProxyType(my_dict)
+print(read_only)            # {'alice': 19, 'bob': 18, 'charlie': 20}
+# read_only['bob': 21]        # TypeError
+my_dict['bob'] = 21
+print(read_only)            # {'alice': 19, 'bob': 21, 'charlie': 20}
