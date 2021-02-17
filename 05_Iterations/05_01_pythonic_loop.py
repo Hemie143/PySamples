@@ -9,3 +9,14 @@ for book in books:
 
 for i, book in enumerate(books):
     print(f'{i}: {book}')
+
+students = {
+    'Alice': 20,
+    'Bob': 19
+}
+
+for name, age in students.items():
+    print(f'{name} is {age} years old.')
+
+for i in range(2, 17, 3):
+    print(i)
